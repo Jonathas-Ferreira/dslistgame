@@ -1,9 +1,15 @@
 package com.listgame.dslistgame.entities;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_game_list")
+
 public class GameList {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
@@ -27,9 +33,10 @@ public class GameList {
     public void setName(String name){
         this.name = name;
     }
+
     // Comparar duas list usando equals hascode, usando somente id
     @Override
-    public int hashcode(){
+    public int hashCode(){
         return Objects.hash(id);
     }
 
