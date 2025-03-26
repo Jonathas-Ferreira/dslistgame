@@ -4,11 +4,10 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-import java.util.List;
 import java.util.Objects;
 
 @Embeddable
-public class BelogingPK {
+public class BelongingPK {
 
     //Usando a configuração da JPA para mapear o objeto relacional
     @ManyToOne
@@ -19,11 +18,11 @@ public class BelogingPK {
     @JoinColumn(name = "list_id")
     private GameList list;
 
-    public BelogingPK() {
+    public BelongingPK() {
     }
 
     //Construtor de argumentos
-    public BelogingPK(Game game, GameList list) {
+    public BelongingPK(Game game, GameList list) {
         this.game = game;
         this.list = list;
     }
@@ -57,7 +56,7 @@ public class BelogingPK {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        BelogingPK other = (BelogingPK) obj;
+        BelongingPK other = (BelongingPK) obj;
         return Objects.equals(game, other.game) && Objects.equals(list, other.list);
     }
 }
